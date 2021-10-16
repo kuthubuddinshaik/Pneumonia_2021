@@ -1,0 +1,125 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+.open{
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.4)),url("./images/xray.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.open h1{
+    font-size: 64px;
+    background:rgba(0, 0, 0, 0.6);
+    padding: 10vh 0;
+}
+
+#footer{
+    position: absolute;
+    top: 80%;
+    right: 6%;
+    display: block;
+    color:lavenderblush;
+    font-size: 24px;
+}
+
+/* SECOND and THIRD */
+.pnuem{
+    background: linear-gradient(rgba(0, 0, 0, 0.525),rgba(0, 0, 0, 0.375)),url("./images/med.jpg");
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+
+.covid{
+    background: linear-gradient(rgba(15, 15, 15, 0.2),rgba(15, 15, 15, 0.5)),url("./images/covid.jpg");
+    display: flexbox;
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+h1{
+    display: block;
+    color:rgb(255, 255, 255);
+    text-align: center;
+    padding: 15vh 0 0 0;
+    font-size:36px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.covid p,.pnuem p{
+    display: block;
+    color: lavenderblush;
+    justify-content: center;
+    text-align: left;
+    font-size: 22px;
+    margin:25vh 20vw; 
+}
+
+#trigger,#note{
+    color: rgb(255, 65, 65);
+    font-weight: bolder;
+}
+
+a{
+    text-decoration: unset;
+    color: rgb(0, 187, 187);
+} 
+
+
+/* LAST */
+.one,.two{
+    min-height: 75vh;
+    max-height: 75vh;
+    overflow: hidden;
+}
+
+.one{
+    background: linear-gradient(rgba(15, 15, 15, 0.7),rgba(0, 0, 0, 0.6));
+    width: 25%;
+    float: left;
+    display: flexbox;
+    padding: 5%;
+}
+.two{
+    width:75%;
+    float : left;
+    background: linear-gradient(rgba(15, 15, 15, 0.7),rgba(15, 15, 15, 0.6)),url("./images/accuracy.jpg");
+    display: flexbox;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    padding-top: 5%;
+}
+.one p{
+    padding-top: 10vh;
+    text-align: center;
+    justify-content: center;
+    font-size: 22px;
+    color: lavenderblush;
+}
+.two p{
+    justify-content: center;
+    text-align: center;
+    color: lavenderblush;
+    font-size: 22px;
+    text-align: left;
+    padding:10vh 20vw; 
+}

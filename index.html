@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class='open'>
+        <h1>Pneumonia Classification Using Deep Learning</h1>
+        <div id="footer">
+        <p>Done By:<br></p>
+            <ul style="list-style-type: none;">
+                <li>Gitith T</li>
+                <li>Shaik Kuthubuddin</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class='pnuem'>
+        <h1>Pneumonia - What it is?</h1>
+        <p>Pneumonia is an inflammatory condition of the lung primarily affecting the small air sacs known as alveoli. Symptoms typically include some combination of productive or dry cough, chest pain, fever and difficulty breathing .The severity of the condition is variable.
+        <br>
+        Pneumonia are majorly caused by infections of bacteria or viruses and sometimes by other microorganisms.<br>
+        Chest X-Ray and blood tests are commonly used to confirm the diagnosis. If pneumonia is severe, the affected person is hospitalized with oxygen support.<br>
+        Refer this <a href="https://en.wikipedia.org/wiki/Pneumonia" target="_blank">link</a> for more info.
+        </p>
+    </div>
+
+    <div class='covid'>
+        <h1>SARS-CoV-2 and Pneumonia</h1>
+        <p>In the vividly increasing COVID-19 cases in India, many hospitals including the government ones have started to use CT Scan on covid patients to check on how bad they're infected by the virus. Howerver AIIMS (All India Institute of Medical Science) chief also <span id="trigger">warned</span>  that a single CT Scan is quivalent of taking 300-400 X-Rays and might pound the risk of cancer in later life. To read more about it : <a href="https://timesofindia.indiatimes.com/city/delhi/ct-scans-not-needed-in-mild-covid-19-cases-aiims-chief/articleshow/82381347.cms" target="_blank">Click Here</a>
+        <br>
+        Dr.Randeep Guleria (AIIMS Chief) recommends taking X-Ray if a person has doubt and only take CT Scan when the doctor advices it.<br>
+        This project of pneumonia pressence can help in reducing the human burdern with the help of Artificial Intelligence. 
+     </p>
+    </div>
+
+    <div class="end">
+
+        <div class="one">
+            <p>Upload the image to get the pneumonia result:</p>
+            <br>
+            <br>
+            <br>
+            <form method="POST" enctype="multipart/form-data" id='IMAGES'>
+                <input type="file" name='image'><br><br>
+                <input type="button" value="Submit" onclick="verify()">
+            </form>   
+            <p class="final"></p>
+        </div>
+
+        <div class="two">
+            <p>Our Pneumonia model has given overall accuracy of 96 percentage.<br>
+            Howerver the result can only be taken as an alternate to original results in the need of emergency.<br>
+            <span id="note">Note :</span>The model output is random when inputted with a non chest xray image.<br>So please check that you're uploading the right image to get the desired output. 
+            </p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        function verify()
+        {
+            let IMAGES = document.getElementById('IMAGES');
+            var formData = new FormData(IMAGES);
+            $.ajax({
+            type: "POST",
+            enctype: 'multipart/form-data',
+            url: "{{url_for('home')}}",
+            data: formData,
+            processData: false,
+            contentType: false,
+            cache: false,
+            timeout: 800000,
+            success: function (data) {
+ 
+                $(".final").text(data);
+                console.log("SUCCESS : ", data);
+
+            },
+            error: function (e) { 
+                console.log("ERROR : ", e);
+            }
+            });          
+        }
+    </script>
+</body>
+</html>

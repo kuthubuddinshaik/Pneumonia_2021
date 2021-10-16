@@ -1,1 +1,1 @@
-# Pneumonia_2021
+# Pneumonia
